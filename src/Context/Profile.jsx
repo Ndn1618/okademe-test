@@ -1,4 +1,4 @@
-import { createContext } from 'react'
+import { createContext, useState, useContext } from 'react'
 
 const Context = createContext()
 
@@ -17,5 +17,12 @@ function Provider({ children }) {
 
 function userProfile(setterOnly) {
 
-  const { }
+  const { profile, setProfile } = useContext(Context)
+
+  return setterOnly ? [setProfile] : [profile, setProfile]
+}
+
+export {
+  Provider,
+  userProfile
 }
