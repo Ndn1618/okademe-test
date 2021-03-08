@@ -1,10 +1,20 @@
-import { createContext, useState, useContext } from 'react'
+import { createContext, useState, useContext, useEffect } from 'react'
 
 const Context = createContext()
 
 function Provider({ children }) {
 
-  const [profile, setProfile] = useState({})
+  const [profile, setProfile] = useState(JSON.parse(localStorage.getItem("profile") || "{}"))
+
+  useEffect(() => {
+    if (Object.keys(profile).length) {
+      localStorage.setItem("profile", JSON.stringify(profile))
+    } else {
+      localStorage.removeItem("profile")
+    }
+  }, [
+    profile
+  ])
 
   return (
     <Context.Provider value={{ profile, setProfile }}>
@@ -13,7 +23,7 @@ function Provider({ children }) {
   )
 }
 
-function Profile(setterOnly) {
+function UseProfile(setterOnly) {
 
   const { profile, setProfile } = useContext(Context)
 
@@ -22,5 +32,5 @@ function Profile(setterOnly) {
 
 export {
   Provider,
-  Profile
+  UseProfile
 }

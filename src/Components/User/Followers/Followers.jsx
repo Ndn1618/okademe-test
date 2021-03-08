@@ -1,9 +1,13 @@
+import './Followers.css'
+
 import { useQuery } from '@apollo/client'
 import { useParams, Link } from 'react-router-dom'
 import { QUERY } from './Query'
 
-import Loader from '../Loader/Loader'
-import GqlError from '../Error/Error'
+import Loader from '../../Loader/Loader'
+import GqlError from '../../Error/Error'
+
+import Header from '../Profile/Header/Header'
 
 import moment from 'moment'
 
@@ -28,12 +32,13 @@ function Followers() {
       {
         networkStatus === 7 && (
           <>
-            <ul>
+            <Header />
+            <ul className="followers">
               {
                 data.followers.map(f => (
                   <li key={f.id}>
-                    <span>{moment(f.connectionTime).fromNow()}</span>
                     <Link to={"/" + f.user.username}>{f.user.fullName}</Link>
+                    <span>{moment(f.connectionTime).fromNow()}</span>
                   </li>
                 ))
               }
