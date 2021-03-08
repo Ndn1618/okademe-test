@@ -1,0 +1,63 @@
+header.profile {
+  display: flex;
+  flex-direction: column;
+}
+
+header.profile .infoBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+header.profile .infoBox section:not(.avatar) {
+  display: flex;
+  flex-direction: column;
+}
+
+header.profile .infoBox section:not(.avatar) h3,
+header.profile .infoBox section:not(.avatar) h4 {
+ margin-bottom: 0.5rem;
+}
+
+header.profile .infoBox section:not(.avatar) h3 span + a,
+header.profile .infoBox section:not(.avatar) h4 span + span,
+header.profile .infoBox section:not(.avatar) p span + span {
+ margin-left: 0.5rem;
+}
+
+header.profile .infoBox section.avatar {
+  background-color: red;
+  display: block;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+
+}
+
+header.profile .navbar {
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 1rem;
+}
+
+header.profile .navbar ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header.profile .navbar ul li {
+  padding: 0.5rem 1rem;
+}
+
+header.profile .navbar ul li:last-child {
+  padding: 0.5rem 0 0.5rem 1rem;
+}
+
+header.profile .navbar a {
+  display: flex;
+  color: #363535;
+}
