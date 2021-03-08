@@ -13,7 +13,7 @@ function Provider({ children }) {
   )
 }
 
-function userProfile(setterOnly) {
+function Profile(setterOnly) {
 
   const { profile, setProfile } = useContext(Context)
 
@@ -22,5 +22,5 @@ function userProfile(setterOnly) {
 
 export {
   Provider,
-  userProfile
+  Profile
 }
