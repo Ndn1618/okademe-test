@@ -5,7 +5,8 @@
 }
 
 body {
-  font-family: monospace;
+  font-family: "PT Mono", monospace;
+  font-size: 28px;
 }
 
 ul {
@@ -14,4 +15,8 @@ ul {
 
 a {
   color: blue;
+}
+
+h1, h2, h3, h4 {
+  font-weight: normal;
 }

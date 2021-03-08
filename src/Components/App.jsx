@@ -6,9 +6,6 @@ import "./App.css"
 function App() {
   return (
     <>
-
-      <h1>Okademe</h1>
-
       <Switch>
         <Route path="/" component={Main} exact />
         <Route path="/:username" component={Profile} exact />
