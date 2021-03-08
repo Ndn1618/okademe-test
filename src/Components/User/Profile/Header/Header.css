@@ -20,7 +20,7 @@ header.profile .infoBox section:not(.avatar) h4 {
  margin-bottom: 0.5rem;
 }
 
-header.profile .infoBox section:not(.avatar) h3 span + a,
+header.profile .infoBox section:not(.avatar) h3 a,
 header.profile .infoBox section:not(.avatar) h4 span + span,
 header.profile .infoBox section:not(.avatar) p span + span {
  margin-left: 0.5rem;
@@ -30,8 +30,8 @@ header.profile .infoBox section.avatar {
   background-color: red;
   display: block;
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
 
 }

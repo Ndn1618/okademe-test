@@ -23,7 +23,7 @@ function Header({ fullName, language, username, specialization, joinedAt, follow
           </section>
 
           <section classname="avatar">
-            <img width={80} height={80} alt="avatar" src={"http://127.0.0.1:4000/user/" + username} />
+            <img width={150} height={150} alt="avatar" src={"http://127.0.0.1:4000/user/" + username} />
           </section>
         </div>
 
@@ -33,10 +33,10 @@ function Header({ fullName, language, username, specialization, joinedAt, follow
               <Link to="/">codeBase</Link>
             </li>
             <li>
-              <Link to={"/" + username + "/followers"}>followers ({followersCount})</Link>
+              <Link to={"/" + username + "/followers"}>followers({followersCount})</Link>
             </li>
             <li>
-              <Link to={"/" + username + "/following"}>following ({followingCount})</Link>
+              <Link to={"/" + username + "/following"}>following({followingCount})</Link>
             </li>
           </ul>
         </div>
