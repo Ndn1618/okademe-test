@@ -7,6 +7,8 @@ import Loader from "../../Loader/Loader"
 import GqlError from "../../Error/Error"
 import NoPage from "../../Error/NoPage"
 
+import { Provider as ProfileProvider } from "../../../Context/Profile"
+
 import Header from "./Header/Header"
 
 function Profile() {
@@ -21,22 +23,24 @@ function Profile() {
 
   return (
     <>
-      {
-        networkStatus === 1 && <Loader />
-      }
-      {
-        networkStatus === 8 && <GqlError>{error.message}</GqlError>
-      }
-      {
-        networkStatus === 7 && !data.userProfile && <NoPage />
-      }
-      {
-        networkStatus === 7 && data.userProfile && (
-          <>
-            <Header fullName={data.userProfile.user.fullName} language={data.userProfile.user.language.name} username={username} specialization={data.userProfile.user.specialization.name} joinedAt={data.userProfile.user.joinedAt} followersCount={data.userProfile.followersCount} followingCount={data.userProfile.followingCount} />
-          </>
-        )
-      }
+      <ProfileProvider>
+        {
+          networkStatus === 1 && <Loader />
+        }
+        {
+          networkStatus === 8 && <GqlError>{error.message}</GqlError>
+        }
+        {
+          networkStatus === 7 && !data.userProfile && <NoPage />
+        }
+        {
+          networkStatus === 7 && data.userProfile && (
+            <>
+              <Header fullName={data.userProfile.user.fullName} language={data.userProfile.user.language.name} username={username} specialization={data.userProfile.user.specialization.name} joinedAt={data.userProfile.user.joinedAt} followersCount={data.userProfile.followersCount} followingCount={data.userProfile.followingCount} />
+            </>
+          )
+        }
+      </ProfileProvider>
     </>
   )
 }

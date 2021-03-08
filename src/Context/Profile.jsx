@@ -6,10 +6,8 @@ function Provider({ children }) {
 
   const [profile, setProfile] = useState({})
 
-  const value = null
-
   return (
-    <Context.Provider value={value}>
+    <Context.Provider value={{ profile, setProfile }}>
       {children}
     </Context.Provider>
   )
