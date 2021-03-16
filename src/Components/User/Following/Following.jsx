@@ -1,4 +1,4 @@
-import './Followers.css'
+import './Following.css'
 
 import { useQuery } from '@apollo/client'
 import { useParams, Link } from 'react-router-dom'
@@ -11,7 +11,7 @@ import Header from '../Profile/Header/Header'
 
 import moment from 'moment'
 
-function Followers() {
+function Following() {
 
   const { username } = useParams()
 
@@ -35,7 +35,7 @@ function Followers() {
             <Header />
             <ul className="followers">
               {
-                data.followers.map(f => (
+                data.following.map(f => (
                   <li key={f.id}>
                     <Link to={"/" + f.user.username}>{f.user.fullName} • {f.user.specialization.name}</Link>
                     <span>{moment(f.connectionTime).fromNow()}</span>
@@ -50,4 +50,4 @@ function Followers() {
   )
 }
 
-export default Followers
+export default Following
